@@ -34,7 +34,9 @@ headers = {
 print(headers)
 resetUrl = f"https://gw.wozaixiaoyuan.com/basicinfo/mobile/my/changePassword?newPassword={password}&oldPassword={password}&code="
 res = requests.post(url=resetUrl, headers=headers)
-print("jwsession-->", jwsession)
-with open("jwsession.txt", "w") as f:
-    f.write(jwsession)
 print(res.text)
+new_JWSESSION = res.headers["JWSESSION"]
+print("jwsession-->", new_JWSESSION)
+with open("jwsession.txt", "w") as f:
+    f.write(new_JWSESSION)
+
