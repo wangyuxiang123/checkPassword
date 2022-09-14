@@ -35,4 +35,15 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install requests
           python main.py
-          echo ${cat jwsession.txt} > jwsession.txt
+          
+      - name: commit
+        run: |
+          git config --global user.email 1105017602@qq.com
+          git config --global user.name wangyuxiang123
+          git add ./jwsession.txt
+          git commit -m "update" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+
