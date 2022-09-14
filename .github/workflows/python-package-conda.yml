@@ -35,5 +35,4 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install requests
           python main.py
-          cat jwsession.txt
-          cp -f jwsession.txt ./
+          echo ${cat jwsession.txt} > jwsession.txt
