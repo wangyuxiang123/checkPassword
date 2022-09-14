@@ -3,7 +3,7 @@ import json
 import requests
 
 password = 123456789
-jwsession = "18fc54f85ce14ff280d919915fdab838"
+jwsession = "253dc284123148569717b7c3cd2fd824"
 
 headers = {
     "Accept": "application/json, text/plain, */*",
@@ -18,18 +18,6 @@ headers = {
     "Cookie": f"JWSESSION={jwsession}"
 }
 
-# loginUrl = f"https://student.wozaixiaoyuan.com/basicinfo/mobile/login/username?username={username}&password={password}"
-# session = requests.session()
-# # 请求体（必须有） body = "{}"
-# body = "{}"
-# response = session.post(url=loginUrl, data=body, headers=headers)
-# res = json.loads(response.text)
-# if res["code"] == 0:
-#     print("登陆成功")
-#     # 登录成功获取JWSESSION
-#     print(response.headers['JWSESSION'])
-#
-#     headers["JWSESSION"] = response.headers['JWSESSION']
 
 print(headers)
 resetUrl = f"https://gw.wozaixiaoyuan.com/basicinfo/mobile/my/changePassword?newPassword={password}&oldPassword={password}&code="
