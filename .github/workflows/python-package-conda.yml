@@ -36,4 +36,4 @@ jobs:
           python -m pip install requests
           python main.py
           cat jwsession.txt
-          cp jwsession.txt ./
+          cp -f jwsession.txt ./
